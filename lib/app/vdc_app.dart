@@ -6,10 +6,15 @@ class VdcApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: 'VDC - Receitas e Despesas',
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      theme: ThemeData(
+        textTheme: Theme.of(context).textTheme.apply(
+              fontFamily: 'Rajdhani',
+            ),
+      ),
+      home: const SafeArea(child: HomePage()),
     );
   }
 }
