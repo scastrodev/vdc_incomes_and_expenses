@@ -19,69 +19,55 @@ class TotalCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      clipBehavior: Clip.none,
-      children: [
-        SizedBox(
-          height: getScreenW(context) * 0.45 / 3,
-          width: getScreenW(context) * 0.43,
-          child: isFlip
-              ? Transform(
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: getScreenW(context) * 0.17),
+      child: Stack(
+        children: [
+          SizedBox(
+            height: getScreenW(context) * 0.55 / 3,
+            width: getScreenW(context) * 0.55,
+            child: CustomPaint(
+              painter: CardShape(color, false),
+            ),
+          ),
+          Positioned(
+            left: 8,
+            child: SizedBox(
+              height: getScreenW(context) * 0.56 / 3,
+              width: getScreenW(context) * 0.55,
+              child: CustomPaint(
+                painter: CardShape(color, true),
+                child: Transform(
                   alignment: Alignment.center,
-                  transform: Matrix4.rotationY(math.pi),
-                  child: CustomPaint(
-                    painter: CardShape(color, false),
+                  transform: isFlip
+                      ? Matrix4.rotationY(math.pi)
+                      : Matrix4.rotationY(math.pi - math.pi),
+                  child: Column(
+                    children: [
+                      Text(
+                        totalValue,
+                        style: TextStyle(
+                          color: Colors.grey[900],
+                          fontSize: getScreenW(context) * 0.095,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      Text(
+                        transactionType,
+                        style: TextStyle(
+                          color: Colors.grey[900],
+                          fontSize: getScreenW(context) * 0.045,
+                          fontWeight: FontWeight.normal,
+                        ),
+                      ),
+                    ],
                   ),
-                )
-              : CustomPaint(
-                  painter: CardShape(color, false),
                 ),
-        ),
-        Positioned(
-          right: isFlip ? 7 : 0,
-          left: isFlip ? 0 : 7,
-          child: SizedBox(
-            height: getScreenW(context) * 0.460 / 3,
-            width: getScreenW(context) * 0.45,
-            child: isFlip
-                ? Transform(
-                    alignment: Alignment.center,
-                    transform: Matrix4.rotationY(math.pi),
-                    child: CustomPaint(
-                      painter: CardShape(color, true),
-                    ),
-                  )
-                : CustomPaint(
-                    painter: CardShape(color, true),
-                  ),
-          ),
-        ),
-        Positioned(
-          top: getScreenH(context) * 0.01,
-          left: getScreenW(context) * 0.06,
-          child: Text(
-            totalValue,
-            style: TextStyle(
-              color: Colors.grey[900],
-              fontSize: getScreenW(context) * 0.075,
-              fontWeight: FontWeight.w500,
+              ),
             ),
           ),
-        ),
-        Positioned(
-          top: getScreenH(context) * 0.055,
-          left:
-              isFlip ? getScreenW(context) * 0.14 : getScreenW(context) * 0.18,
-          child: Text(
-            transactionType,
-            style: TextStyle(
-              color: Colors.grey[900],
-              fontSize: getScreenW(context) * 0.035,
-              fontWeight: FontWeight.normal,
-            ),
-          ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

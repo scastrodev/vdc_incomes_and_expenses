@@ -17,40 +17,9 @@ class BalanceCardWidget extends StatelessWidget {
     return Stack(
       children: [
         Container(
-          height: getScreenW(context) * 0.5 / 3,
-          width: getScreenW(context) * 0.50,
-          decoration: BoxDecoration(
-            border: Border.all(
-              color: Colors.red,
-              width: 1.5,
-            ),
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                balanceValue,
-                style: TextStyle(
-                  color: Colors.grey[300],
-                  fontSize: getScreenW(context) * 0.075,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-              Text(
-                'Saldo',
-                style: TextStyle(
-                  color: Colors.grey[300],
-                  fontSize: getScreenW(context) * 0.035,
-                  fontWeight: FontWeight.normal,
-                ),
-              ),
-            ],
-          ),
-        ),
-        Container(
-          height: getScreenW(context) * 0.5 / 3,
-          width: getScreenW(context) * 0.45,
-          margin: EdgeInsets.only(left: getScreenW(context) * 0.025),
+          height: getScreenW(context) * 0.55 / 3,
+          width: getScreenW(context) * 0.51,
+          margin: EdgeInsets.only(left: getScreenW(context) * 0.035),
           decoration: const BoxDecoration(
             border: Border.symmetric(
               vertical: BorderSide(
@@ -58,6 +27,36 @@ class BalanceCardWidget extends StatelessWidget {
                 width: 5,
               ),
             ),
+          ),
+        ),
+        Container(
+          height: getScreenW(context) * 0.55 / 3,
+          width: getScreenW(context) * 0.58,
+          decoration: BoxDecoration(
+            border: Border.all(
+              color: Colors.red,
+              width: 1.5,
+            ),
+          ),
+          child: Column(
+            children: [
+              Text(
+                balanceValue,
+                style: TextStyle(
+                  color: Colors.grey[300],
+                  fontSize: getScreenW(context) * 0.092,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+              Text(
+                'Saldo',
+                style: TextStyle(
+                  color: Colors.grey[300],
+                  fontSize: getScreenW(context) * 0.045,
+                  fontWeight: FontWeight.normal,
+                ),
+              ),
+            ],
           ),
         ),
       ],
