@@ -11,6 +11,6 @@ class NewTransactionTextField extends StatefulWidget {
 class _NewTransactionTextFieldState extends State<NewTransactionTextField> {
   @override
   Widget build(BuildContext context) {
-    return (va);
+    return Container();
   }
 }
