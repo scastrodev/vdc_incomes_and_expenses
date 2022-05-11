@@ -6,7 +6,6 @@ import 'dart:math' as math;
 
 import 'package:vdc_incomes_and_expenses/app/ui/widgets/commons/transaction_card_widget.dart';
 import 'package:vdc_incomes_and_expenses/app/ui/widgets/new_transaction/new_transaction_bottom_sheet_widget.dart';
-import 'package:vdc_incomes_and_expenses/app/ui/widgets/new_transaction/new_transaction_button_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -27,7 +26,7 @@ class _HomePageState extends State<HomePage> {
       transform: Matrix4.rotationY(math.pi),
       child: const TotalCardWidget(
         color: customRed,
-        totalValue: 'R\$1000,00',
+        totalValue: 'sR\$1000,00',
         transactionType: 'Despesa',
         isFlip: true,
       ),
