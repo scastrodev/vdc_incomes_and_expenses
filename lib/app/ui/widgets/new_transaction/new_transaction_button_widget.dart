@@ -1,37 +1,40 @@
 import 'package:flutter/material.dart';
-
-import '../../constants.dart';
+import 'package:vdc_incomes_and_expenses/app/ui/constants.dart';
+import 'package:vdc_incomes_and_expenses/app/ui/util/size_screen.dart';
 
 class NewTransactionButtonWidget extends StatelessWidget {
-  final VoidCallback onPressed;
+  final String text;
+  final bool isFilled;
 
   const NewTransactionButtonWidget({
-    required this.onPressed,
     Key? key,
+    required this.text,
+    required this.isFilled,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: const ShapeDecoration(
-        shape: BeveledRectangleBorder(),
-        gradient: LinearGradient(
-          begin: Alignment.centerLeft,
-          end: Alignment.centerRight,
-          colors: [customGreen, customRed],
-        ),
-      ),
+    return SizedBox(
+      width: getScreenW(context) * 0.32,
+      height: getScreenH(context) * 0.050,
       child: ElevatedButton(
-        onPressed: onPressed,
+        child: Text(
+          text,
+          style: TextStyle(
+            fontWeight: FontWeight.w700,
+            fontSize: getScreenW(context) * 0.045,
+          ),
+        ),
         style: ElevatedButton.styleFrom(
-          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-          primary: Colors.transparent,
-          shadowColor: Colors.transparent,
+          elevation: 0,
+          shape: BeveledRectangleBorder(
+            side: BorderSide(
+              color: Colors.grey[900]!,
+            ),
+          ),
+          primary: isFilled ? customGreen2 : Colors.transparent,
         ),
-        child: const Text(
-          'ADICIONAR',
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
+        onPressed: () {},
       ),
     );
   }

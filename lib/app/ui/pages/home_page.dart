@@ -26,7 +26,7 @@ class _HomePageState extends State<HomePage> {
       transform: Matrix4.rotationY(math.pi),
       child: const TotalCardWidget(
         color: customRed,
-        totalValue: 'sR\$1000,00',
+        totalValue: 'R\$1000,00',
         transactionType: 'Despesa',
         isFlip: true,
       ),
