@@ -89,13 +89,13 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "com.example" "\0"
+            VALUE "CompanyName", "dev.scastro.vdc-incomes-and-expenses" "\0"
             VALUE "FileDescription", "vdc_incomes_and_expenses" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
             VALUE "InternalName", "vdc_incomes_and_expenses" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2022 com.example. All rights reserved." "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2022 dev.scastro.vdc-incomes-and-expenses. All rights reserved." "\0"
             VALUE "OriginalFilename", "vdc_incomes_and_expenses.exe" "\0"
-            VALUE "ProductName", "vdc_incomes_and_expenses" "\0"
+            VALUE "ProductName", "Vdc Incomes And Expenses" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END
