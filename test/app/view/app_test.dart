@@ -6,13 +6,13 @@
 // https://opensource.org/licenses/MIT.
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:vdc_incomes_and_expenses/app/app.dart';
+import 'package:vdc_incomes_and_expenses/app/vdc_app.dart';
 import 'package:vdc_incomes_and_expenses/counter/counter.dart';
 
 void main() {
   group('App', () {
     testWidgets('renders CounterPage', (tester) async {
-      await tester.pumpWidget(const App());
+      await tester.pumpWidget(const VdcApp());
       expect(find.byType(CounterPage), findsOneWidget);
     });
   });

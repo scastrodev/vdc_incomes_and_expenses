@@ -10,17 +10,15 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:vdc_incomes_and_expenses/counter/counter.dart';
 import 'package:vdc_incomes_and_expenses/l10n/l10n.dart';
 
-class App extends StatelessWidget {
-  const App({super.key});
+class VdcApp extends StatelessWidget {
+  const VdcApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'VDC - Receitas e Despesas',
       theme: ThemeData(
-        appBarTheme: const AppBarTheme(color: Color(0xFF13B9FF)),
-        colorScheme: ColorScheme.fromSwatch(
-          accentColor: const Color(0xFF13B9FF),
-        ),
+        textTheme: Theme.of(context).textTheme.apply(fontFamily: 'Rajdhani'),
       ),
       localizationsDelegates: const [
         AppLocalizations.delegate,
